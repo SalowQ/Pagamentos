@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/pagamentos/static/css/main.565d40c2.css",
+    "main.js": "/pagamentos/static/js/main.0e19cfac.js",
+    "index.html": "/pagamentos/index.html",
+    "main.565d40c2.css.map": "/pagamentos/static/css/main.565d40c2.css.map",
+    "main.0e19cfac.js.map": "/pagamentos/static/js/main.0e19cfac.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.565d40c2.css",
+    "static/js/main.0e19cfac.js"
+  ]
+}
