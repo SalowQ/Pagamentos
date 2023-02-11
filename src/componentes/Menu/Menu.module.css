@@ -1,0 +1,44 @@
+.menu {
+    width: 95%;
+    height: 150px;
+    margin-top: 20px;
+    padding: 50px 100px;
+    background-color: var(--medio);
+    font-size: 28px;
+    color: var(--branco);
+    font-weight: 700;
+    border-radius: 0 75px 75px 0;
+}
+
+.menuContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.menuAtivo {
+    text-decoration: underline;
+}
+
+li {
+    display: block;
+    padding: 10px;
+}
+
+ul {
+    margin-block: 0;
+}
+
+@media (max-width: 1024px) {
+    .menu {
+        height: 150px;
+        padding: 30px 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .menu {
+        height: 200px;
+    }
+}

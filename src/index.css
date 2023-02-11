@@ -1,0 +1,45 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --escuro: #506080;
+  --medio: #839CCC;
+  --branco: #FFE5CB;
+  --fonte-principal: 'Raleway', sans-serif;
+
+  font-family: var(--fonte-principal);
+}
+
+#root {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: minmax(0, 1fr);
+  min-height: 100vh;
+  background-color: var(--escuro);
+}
+
+a, button, input, textarea {
+  font: inherit;
+  color: inherit;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+h1, h2, h3 {
+  font-weight: 700;
+  line-height: 5rem;
+  text-align: center;
+}
+
+main {
+  color: var(--branco);
+}

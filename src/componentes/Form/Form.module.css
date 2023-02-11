@@ -1,0 +1,36 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.formCampo {
+    width: 900px;
+    height: 50px;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 50px;
+    font-size: 30px;
+    border-width: 0;
+    color: black;
+}
+
+.form button {
+    width: 600px;
+    background-color: var(--medio);
+}
+
+button:hover {
+    background-color: #282B40;
+    transition-duration: 1s;
+  }
+
+  @media (max-width: 1024px) {
+    .formCampo {
+        width: 350px;
+    }
+
+    .form button {
+        width: 150px;
+    }
+}
