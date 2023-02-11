@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
+import Popup from '../Popup';
 import styles from './Form.module.css';
 
 export default function Form(props) {
@@ -39,11 +39,12 @@ export default function Form(props) {
       ];
 
     const [cartao, setCartao] = useState(cartoes[0]);
-    const navigate = useNavigate();
     const [validacao, setValidacao] = useState('Espere um momento...');
+    const [ativarPopup, setAtivarPopup] = useState(false);
     
     const handleSubmit = event => {
       event.preventDefault();
+      setAtivarPopup(true)
       fetch('https://run.mocky.io/v3/533cd5d7-63d3-4488-bf8d-4bb8c751c989',{
         method: 'POST',
         body: JSON.stringify({
@@ -66,13 +67,11 @@ export default function Form(props) {
       .catch((err) => {
         alert(`Seu pagamento não pôde ser concluído! - ${err}`)
       })
-      
-      /*navigate('/conclusao');*/
     }
-     
   
     return (
-        <form className={styles.form} onSubmit={handleSubmit}>
+        <div>
+          <form className={styles.form} onSubmit={handleSubmit}>
             <input 
                 className={styles.formCampo} 
                 type='text' 
@@ -98,7 +97,10 @@ export default function Form(props) {
             <button className={styles.formCampo} type="submit">
                 Pagar
             </button>
-            <div>{validacao}</div>
-        </form>
+          </form>
+          <Popup trigger={ativarPopup} setTrigger={setAtivarPopup}>
+              <h1>{validacao}</h1>
+          </Popup>
+        </div>
     )
 }

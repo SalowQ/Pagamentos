@@ -28,9 +28,8 @@ export default function Inicio() {
           })
           .finally(() => {
             setLoading(false);
-            console.log(loading);
           });
-      }, []);     
+      }, );     
 
     return (
         <main>
