@@ -6,7 +6,7 @@ function AppRoutes() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route exact path='/' element={<Inicio></Inicio>}></Route>
+        <Route path='/pagamentos' element={<Inicio></Inicio>}></Route>
         <Route path='/pagamento/:id/:nome' element={<Pagamento></Pagamento>}></Route>
       </ Routes>
     </BrowserRouter>
