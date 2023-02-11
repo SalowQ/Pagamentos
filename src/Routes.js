@@ -1,5 +1,4 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Conclusao from "./paginas/Conclusao";
 import Inicio from "./paginas/Inicio";
 import Pagamento from "./paginas/Pagamento";
 
