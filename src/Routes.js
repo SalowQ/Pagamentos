@@ -9,7 +9,6 @@ function AppRoutes() {
       <Routes>
         <Route exact path='/' element={<Inicio></Inicio>}></Route>
         <Route path='/pagamento/:id/:nome' element={<Pagamento></Pagamento>}></Route>
-        <Route path='/conclusao' element={<Conclusao></Conclusao>}></Route>
       </ Routes>
     </BrowserRouter>
   );
