@@ -11,7 +11,7 @@ export default function Menu (props) {
             <ul className={styles.menuContainer}>
                 <li>
                     <NavLink
-                        to="/"
+                        to="/pagamentos"
                         style={({ isActive }) =>
                         isActive ? activeStyle : undefined}
                     >

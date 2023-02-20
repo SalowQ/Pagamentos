@@ -41,6 +41,8 @@ export default function Form(props) {
     const [cartao, setCartao] = useState(cartoes[0]);
     const [validacao, setValidacao] = useState('Espere um momento...');
     const [ativarPopup, setAtivarPopup] = useState(false);
+    const [mensagemPopup, setMensagemPopup] = useState(false);
+    const [mensagemBotao, setMensagemBotao] = useState('');
     
     const handleSubmit = event => {
       event.preventDefault();
@@ -55,13 +57,16 @@ export default function Form(props) {
           value: parseFloat(value.replace(/[R$ ]/g, ' ').replace(/[.]/g, '').replace(/[,]/g, '.'))
         })
       })
-      .then((res) => console.log(res.json()))
-      .then(() => {
+      .then((res) =>{
         if (cartao.card_number === '1111111111111111'){
           setValidacao('Pagamento concluído com sucesso!')
+          setMensagemPopup(true)
+          setMensagemBotao('Faça outro pagamento')
         }
         if (cartao.card_number === '4111111111111234'){
-          setValidacao('Seu cartão não foi aceito. Por favor, tente novamente.')
+          setValidacao('Seu cartão não foi aceito.')
+          setMensagemPopup(true)
+          setMensagemBotao('Tente novamente')
         }
       })
       .catch((err) => {
@@ -98,7 +103,7 @@ export default function Form(props) {
                 Pagar
             </button>
           </form>
-          <Popup trigger={ativarPopup} setTrigger={setAtivarPopup}>
+          <Popup trigger={ativarPopup} setTrigger={setAtivarPopup} popup={mensagemPopup} botao ={mensagemBotao}>
               <h1>{validacao}</h1>
           </Popup>
         </div>
