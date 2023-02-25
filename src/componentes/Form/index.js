@@ -91,7 +91,7 @@ export default function Form(props) {
             <select 
               className={styles.formCampo} 
               name='cartao-selecionado'
-              onChange={value => setCartao(JSON.parse(value.target.value))}
+              onChange={value => setCartao(cartoes(value.target.value))}
             >
                 {cartoes.map(card =>
                 <option key={card.cvv} value={JSON.stringify(card)}>
